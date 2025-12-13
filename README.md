@@ -25,7 +25,8 @@ Upload pet images
 Manage pet listings
 
 🛠️ Tech Stack
-Frontend
+
+Frontend:
 
 HTML
 
@@ -33,7 +34,7 @@ CSS
 
 JavaScript
 
-Backend
+Backend:
 
 Node.js
 
