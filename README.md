@@ -4,27 +4,41 @@ In this platform, admins (pet rescuers) can add pets, and visitors can view avai
 ⚠️ Note: Pets do not have prices. Adoption is handled offline through the store/organization.
 
 ✨ Features
-
 👤 Visitor
+
 View list of rescued pets
+
 View pet details (name, breed, age, size, description, image)
+
 Click Apply to Adopt
+
 Guided to visit the rescue store for adoption
 
 🔐 Admin (Pet Rescuer)
+
 Secure admin login
+
 Add new pets
+
 Upload pet images
+
 Manage pet listings
 
 🛠️ Tech Stack
-Frontend:
+Frontend
+
 HTML
+
 CSS
+
 JavaScript
-Backend:
+
+Backend
+
 Node.js
+
 Express.js
+
 MongoDB (Mongoose)
 
 📁 Project Structure
@@ -75,20 +89,31 @@ node server.js
 http://localhost:3000
 
 🔐 Admin Access
+
 Admin can log in using credentials defined in .env
+
 Admin page:
+
 http://localhost:3000/admin.html
 
 🎯 Project Purpose
+
 Learn Frontend + Backend integration
+
 Understand CRUD operations
+
 Practice authentication & role-based access
+
 Designed for college lab assignments & mini projects
 
 📌 Future Improvements
+
 User authentication (login/signup)
+
 Online adoption requests
+
 Adoption status tracking
+
 Email notifications
 
 Better UI/UX
