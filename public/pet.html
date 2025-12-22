@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pet Profile</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a href="index.html" class="logo" aria-label="Petify home">
+        <span aria-hidden="true">Petify</span>
+      </a>
+      <nav></nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div id="pet-container">
+      <img id="pet-photo" src="https://via.placeholder.com/600x400?text=Pet" alt="">
+      <h2 id="pet-name"></h2>
+      <p id="pet-meta"></p>
+      <p id="pet-desc"></p>
+
+      <div id="adoption-section">
+        <h3>Apply to adopt</h3>
+        <form id="apply-form">
+          <button type="submit" class="btn">Apply to adopt</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/adopt.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

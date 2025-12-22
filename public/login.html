@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login | Petify</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a href="index.html" class="logo" aria-label="Petify home">
+        <span aria-hidden="true">Petify</span>
+      </a>
+      <nav></nav>
+    </div>
+  </header>
+
+  <main class="wrap auth-wrap">
+    <section class="card auth-card">
+      <h1>Login</h1>
+      <p>Access your Petify account.</p>
+
+      <form id="login-form" novalidate>
+        <label>
+          Email
+          <input type="email" name="email" required autocomplete="email" />
+        </label>
+        <label>
+          Password
+          <input type="password" name="password" required minlength="6" autocomplete="current-password" />
+        </label>
+        <button type="submit" class="btn full-width">Login</button>
+      </form>
+
+      <p id="login-message" class="form-message" role="status" aria-live="polite"></p>
+
+      <p class="auth-switch">
+        New here? <a href="signup.html">Create an account</a>
+      </p>
+    </section>
+  </main>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>
+
+

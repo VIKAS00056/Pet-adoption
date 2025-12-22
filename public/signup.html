@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign up | Petify</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a href="index.html" class="logo" aria-label="Petify home">
+        <span aria-hidden="true">Petify</span>
+      </a>
+      <nav></nav>
+    </div>
+  </header>
+
+  <main class="wrap auth-wrap">
+    <section class="card auth-card">
+      <h1>Create an account</h1>
+      <p>Sign up to save your favourite pets and manage applications.</p>
+
+      <form id="signup-form" novalidate>
+        <label>
+          Name
+          <input type="text" name="name" required minlength="2" autocomplete="name" />
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" required autocomplete="email" />
+        </label>
+        <label>
+          Password
+          <input type="password" name="password" required minlength="6" autocomplete="new-password" />
+        </label>
+        <label>
+          Mobile Number (optional)
+          <input type="tel" name="mobile" autocomplete="tel" placeholder="e.g., +1 234 567 8900" />
+        </label>
+        <label>
+          Address (optional)
+          <textarea name="address" rows="3" placeholder="Your full address"></textarea>
+        </label>
+        <button type="submit" class="btn full-width">Sign up</button>
+      </form>
+
+      <p id="signup-message" class="form-message" role="status" aria-live="polite"></p>
+
+      <p class="auth-switch">
+        Already have an account? <a href="login.html">Login</a>
+      </p>
+    </section>
+  </main>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>
+
+

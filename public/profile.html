@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Profile | Petify</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a href="index.html" class="logo" aria-label="Petify home">
+        <span aria-hidden="true">Petify</span>
+      </a>
+      <nav></nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card auth-card">
+      <h1>My profile</h1>
+      <p>View your account details and adoption applications.</p>
+
+      <div id="profile-view">
+        <p><strong>Name:</strong> <span id="profile-name">Loading...</span></p>
+        <p><strong>Email:</strong> <span id="profile-email">Loading...</span></p>
+        <p><strong>Mobile:</strong> <span id="profile-mobile">Loading...</span></p>
+        <p><strong>Address:</strong> <span id="profile-address">Loading...</span></p>
+        <button id="edit-profile-btn" class="btn" style="margin-top: 16px;">Edit Profile</button>
+      </div>
+
+      <div id="profile-edit" style="display: none;">
+        <form id="edit-profile-form">
+          <label>
+            Name
+            <input type="text" name="name" id="edit-name" required minlength="2" autocomplete="name" />
+          </label>
+          <label>
+            Mobile Number
+            <input type="tel" name="mobile" id="edit-mobile" autocomplete="tel" placeholder="e.g., +1 234 567 8900" />
+          </label>
+          <label>
+            Address
+            <textarea name="address" id="edit-address" rows="3" placeholder="Your full address"></textarea>
+          </label>
+          <div style="display: flex; gap: 10px; margin-top: 12px;">
+            <button type="submit" class="btn">Save Changes</button>
+            <button type="button" id="cancel-edit-btn" class="btn" style="background: #666;">Cancel</button>
+          </div>
+        </form>
+        <p id="edit-message" class="form-message" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section>
+      <h2>My adoption applications</h2>
+      <div id="profile-applications" class="grid"></div>
+    </section>
+  </main>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>
+
+
