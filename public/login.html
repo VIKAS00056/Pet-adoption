@@ -24,7 +24,7 @@
       <form id="login-form" novalidate>
         <label>
           Email
-          <input type="email" name="email" required autocomplete="email" />
+          <input type="email" name="email" required autocomplete="email" pattern="[^\s@]+@[^\s@]+\.[^\s@]+" />
         </label>
         <label>
           Password
@@ -41,6 +41,7 @@
     </section>
   </main>
 
+  <script src="js/validation.js"></script>
   <script src="js/auth.js"></script>
 </body>
 </html>

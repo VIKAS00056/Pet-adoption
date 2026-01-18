@@ -28,7 +28,7 @@
         </label>
         <label>
           Email
-          <input type="email" name="email" required autocomplete="email" />
+          <input type="email" name="email" required autocomplete="email" pattern="[^\s@]+@[^\s@]+\.[^\s@]+" />
         </label>
         <label>
           Password
@@ -36,7 +36,7 @@
         </label>
         <label>
           Mobile Number (optional)
-          <input type="tel" name="mobile" autocomplete="tel" placeholder="e.g., +1 234 567 8900" />
+          <input type="tel" name="mobile" autocomplete="tel" placeholder="e.g., +1 234 567 8900" pattern="[\+]?[(]?[0-9]{1,4}[)]?[-\s\.]?[(]?[0-9]{1,4}[)]?[-\s\.]?[0-9]{1,9}" />
         </label>
         <label>
           Address (optional)
@@ -53,6 +53,7 @@
     </section>
   </main>
 
+  <script src="js/validation.js"></script>
   <script src="js/auth.js"></script>
 </body>
 </html>

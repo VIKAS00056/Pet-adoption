@@ -71,11 +71,32 @@
     signupForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const formData = new FormData(signupForm);
+      const email = formData.get('email')?.trim();
+      const mobile = formData.get('mobile')?.trim();
+      
+      // Validate email
+      if (email && typeof validateEmail === 'function') {
+        const emailValidation = validateEmail(email);
+        if (!emailValidation.valid) {
+          showMessage(messageEl, emailValidation.message, true);
+          return;
+        }
+      }
+      
+      // Validate mobile if provided
+      if (mobile && typeof validateMobile === 'function') {
+        const mobileValidation = validateMobile(mobile);
+        if (!mobileValidation.valid) {
+          showMessage(messageEl, mobileValidation.message, true);
+          return;
+        }
+      }
+      
       const payload = {
         name: formData.get('name')?.trim(),
-        email: formData.get('email')?.trim(),
+        email: email,
         password: formData.get('password'),
-        mobile: formData.get('mobile')?.trim(),
+        mobile: mobile,
         address: formData.get('address')?.trim(),
       };
 
@@ -112,8 +133,19 @@
     loginForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const formData = new FormData(loginForm);
+      const email = formData.get('email')?.trim();
+      
+      // Validate email
+      if (email && typeof validateEmail === 'function') {
+        const emailValidation = validateEmail(email);
+        if (!emailValidation.valid) {
+          showMessage(messageEl, emailValidation.message, true);
+          return;
+        }
+      }
+      
       const payload = {
-        email: formData.get('email')?.trim(),
+        email: email,
         password: formData.get('password'),
       };
 
@@ -290,9 +322,20 @@
       }
 
       const formData = new FormData(editProfileForm);
+      const mobile = formData.get('mobile')?.trim();
+      
+      // Validate mobile if provided
+      if (mobile && typeof validateMobile === 'function') {
+        const mobileValidation = validateMobile(mobile);
+        if (!mobileValidation.valid) {
+          showMessage(editMessageEl, mobileValidation.message, true);
+          return;
+        }
+      }
+      
       const payload = {
         name: formData.get('name')?.trim(),
-        mobile: formData.get('mobile')?.trim(),
+        mobile: mobile,
         address: formData.get('address')?.trim(),
       };
 

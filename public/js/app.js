@@ -57,9 +57,21 @@ document.addEventListener('DOMContentLoaded', async ()=>{
     feedbackForm.onsubmit = async (e) => {
       e.preventDefault();
       const formData = new FormData(feedbackForm);
+      const email = formData.get('email')?.trim();
+      
+      // Validate email
+      if (email && typeof validateEmail === 'function') {
+        const emailValidation = validateEmail(email);
+        if (!emailValidation.valid) {
+          feedbackMessage.textContent = emailValidation.message;
+          feedbackMessage.className = 'form-message error';
+          return;
+        }
+      }
+      
       const data = {
         name: formData.get('name'),
-        email: formData.get('email'),
+        email: email,
         message: formData.get('message'),
       };
 
