@@ -1,5 +1,5 @@
 // public/js/admin.js
-const ADMIN_SECRET = 'supersecret'; // demo only — change or supply via prompt/header in real use
+const ADMIN_SECRET = 'supersecret';
 
 async function listAnimals(){
   const res = await fetch('/api/animals');
@@ -28,8 +28,7 @@ async function listAnimals(){
         alert('Error: Missing animal ID');
         return;
       }
-      
-      // Disable button during request
+    
       btn.disabled = true;
       btn.textContent = 'Updating...';
       
@@ -62,9 +61,7 @@ async function listAnimals(){
       } catch(err) {
         alert('Error updating pet status: ' + err.message);
         console.error('Update error:', err);
-        // Re-enable button on error
         btn.disabled = false;
-        // Reload to get correct button text
         listAnimals();
       }
     }
@@ -75,6 +72,20 @@ document.addEventListener('DOMContentLoaded', ()=>{
   listAnimals();
 
   const form = document.getElementById('create-form');
+  const toggleBtn = document.getElementById('toggle-animals-btn');
+  const adminList = document.getElementById('admin-list');
+
+  //hide or show button functionality
+  toggleBtn.onclick = () => {
+    if (adminList.style.display === 'none') {
+      adminList.style.display = '';
+      toggleBtn.textContent = 'Hide';
+    } else {
+      adminList.style.display = 'none';
+      toggleBtn.textContent = 'Show';
+    }
+  };
+
   form.onsubmit = async (e) => {
     e.preventDefault();
     const fd = new FormData(form);

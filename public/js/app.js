@@ -48,4 +48,53 @@ document.addEventListener('DOMContentLoaded', async ()=>{
     });
     renderGrid(full);
   }
+
+  // Feedback form handling
+  const feedbackForm = document.getElementById('feedback-form');
+  if (feedbackForm) {
+    const feedbackMessage = document.getElementById('feedback-message');
+    
+    feedbackForm.onsubmit = async (e) => {
+      e.preventDefault();
+      const formData = new FormData(feedbackForm);
+      const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        message: formData.get('message'),
+      };
+
+      // Disable submit button
+      const submitBtn = feedbackForm.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+
+      try {
+        const res = await fetch('/api/feedback', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        });
+
+        const result = await res.json();
+
+        if (res.ok) {
+          feedbackMessage.textContent = result.message || 'Thank you for your feedback!';
+          feedbackMessage.className = 'form-message success';
+          feedbackForm.reset();
+        } else {
+          feedbackMessage.textContent = result.error || 'Failed to submit feedback. Please try again.';
+          feedbackMessage.className = 'form-message error';
+        }
+      } catch (err) {
+        console.error('Feedback submission error:', err);
+        feedbackMessage.textContent = 'An error occurred. Please try again later.';
+        feedbackMessage.className = 'form-message error';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit Feedback';
+      }
+    };
+  }
 });

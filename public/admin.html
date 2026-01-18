@@ -32,8 +32,10 @@
       <input type="file" name="photo" accept="image/*" />
       <button type="submit" class="btn">Create</button>
     </form>
-
-    <h2>Existing animals</h2>
+    <div style="display: flex; align-items: center; gap: 12px; margin-top: 24px;">
+      <h2 style="margin: 0;">Existing animals</h2>
+      <button type="button" id="toggle-animals-btn" class="btn" style="background: #666;">Hide</button>
+    </div>
     <div id="admin-list" class="grid"></div>
   </main>
 

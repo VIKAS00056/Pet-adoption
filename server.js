@@ -12,6 +12,7 @@ const bcrypt = require('bcryptjs');
 const Animal = require('./models/Animal');
 const User = require('./models/User');
 const Application = require('./models/Application');
+const Feedback = require('./models/Feedback');
 
 const app = express();
 app.use(cors());
@@ -171,6 +172,31 @@ app.post('/api/newsletter', async (req,res) => {
   if(!email) return res.status(400).json({ error:'missing email' });
   console.log('Newsletter signup:', email);
   res.json({ ok:true });
+});
+
+// Feedback submission
+app.post('/api/feedback', async (req, res) => {
+  try {
+    const { name, email, message } = req.body;
+    if (!name || !email || !message) {
+      return res.status(400).json({ error: 'Name, email, and message are required' });
+    }
+
+    const feedback = await Feedback.create({
+      name: name.trim(),
+      email: email.toLowerCase().trim(),
+      message: message.trim(),
+    });
+
+    res.status(201).json({
+      ok: true,
+      message: 'Thank you for your feedback!',
+      id: feedback._id,
+    });
+  } catch (err) {
+    console.error('Feedback error', err);
+    res.status(500).json({ error: 'Server error' });
+  }
 });
 
 // ---- Auth (login / signup) ---- //

@@ -39,6 +39,27 @@
       <p>Your donation helps us care for animals.</p>
       <a href="https://www.paypal.com/donate" target="_blank" rel="noopener" class="btn">Donate Now</a>
     </section>
+
+    <section id="feedback" class="wrap" style="margin-top: 48px;">
+      <h3>We'd Love to Hear From You</h3>
+      <p>Share your thoughts, suggestions, or questions with us.</p>
+      <form id="feedback-form" class="card" style="max-width: 600px; margin-top: 20px;">
+        <label>
+          Name
+          <input type="text" name="name" required minlength="2" autocomplete="name" />
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" required autocomplete="email" />
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="5" required placeholder="Your feedback, suggestions, or questions..."></textarea>
+        </label>
+        <button type="submit" class="btn">Submit Feedback</button>
+        <p id="feedback-message" class="form-message" role="status" aria-live="polite"></p>
+      </form>
+    </section>
   </main>
 
   <footer class="site-footer wrap">
