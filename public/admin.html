@@ -30,7 +30,11 @@
       <input name="size" placeholder="Size" />
       <textarea name="description" placeholder="Description"></textarea>
       <input type="file" name="photo" accept="image/*" />
-      <button type="submit" class="btn">Create</button>
+      <div style="display: flex; gap: 10px; margin-top: 12px;">
+        <button type="submit" class="btn">Create</button>
+        <button type="button" id="clear-form-btn" class="btn" style="background: #666;">Clear Form</button>
+      </div>
+      <p id="thank-you-message" class="form-message" role="status" aria-live="polite" style="display: none; margin-top: 12px;"></p>
     </form>
     <div style="display: flex; align-items: center; gap: 12px; margin-top: 24px;">
       <h2 style="margin: 0;">Existing animals</h2>

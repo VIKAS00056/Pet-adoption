@@ -1,9 +1,7 @@
-// Validation utilities for email and mobile number
 
 // Email validation regex
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-// Mobile number validation regex (accepts various formats)
 // Accepts: +1 234 567 8900, (123) 456-7890, 123-456-7890, 1234567890, +91 98765 43210, etc.
 const mobileRegex = /^[\+]?[(]?[0-9]{1,4}[)]?[-\s\.]?[(]?[0-9]{1,4}[)]?[-\s\.]?[0-9]{1,9}$/;
 

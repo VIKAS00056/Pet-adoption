@@ -74,6 +74,21 @@ document.addEventListener('DOMContentLoaded', ()=>{
   const form = document.getElementById('create-form');
   const toggleBtn = document.getElementById('toggle-animals-btn');
   const adminList = document.getElementById('admin-list');
+  const clearBtn = document.getElementById('clear-form-btn');
+  const thankYouMessage = document.getElementById('thank-you-message');
+
+  // Clear form button functionality
+  clearBtn.onclick = () => {
+    form.reset();
+    thankYouMessage.textContent = 'Thank you! Form has been cleared.';
+    thankYouMessage.className = 'form-message success';
+    thankYouMessage.style.display = 'block';
+    
+    // Hide message after 3 seconds
+    setTimeout(() => {
+      thankYouMessage.style.display = 'none';
+    }, 3000);
+  };
 
   //hide or show button functionality
   toggleBtn.onclick = () => {
